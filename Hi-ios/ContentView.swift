@@ -22,7 +22,7 @@ struct ContentView: View {
             Text("20 sections - 3 hours".uppercased())
                 .font(.footnote)
                 .fontWeight(.semibold)
-                .foregroundColor(.secondary)
+                .foregroundStyle(.linearGradient(colors: [.primary, .blue], startPoint: .topLeading, endPoint: .topTrailing))
             Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
                 .font(.footnote)
                 .fontWeight(.semibold)
@@ -37,10 +37,18 @@ struct ContentView: View {
         .padding(.all, 20.0)
         .padding(.vertical, 20.0)
         .frame(height: 350.0)
-        .background(Color("Background"))
+        .background(.ultraThinMaterial)
         .cornerRadius(30.0)
         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0.0, y: 10.0)
         .padding(.horizontal, 20.0)
+        .background(Image("Blob 1").offset(x: 250, y: -100))
+        .overlay(
+            Image("Illustration 5")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 230)
+                .offset(x: 32, y: -80)
+        )
     }
 }
 
